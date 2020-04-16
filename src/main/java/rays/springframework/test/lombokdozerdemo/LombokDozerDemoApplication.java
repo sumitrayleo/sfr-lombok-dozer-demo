@@ -1,5 +1,6 @@
 package rays.springframework.test.lombokdozerdemo;
 
+import lombok.extern.slf4j.Slf4j;
 import org.dozer.Mapper;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -7,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import rays.springframework.test.lombokdozerdemo.data.EmployeeDto;
 import rays.springframework.test.lombokdozerdemo.model.Employee;
 
+@Slf4j
 @SpringBootApplication
 public class LombokDozerDemoApplication implements CommandLineRunner {
 
@@ -27,6 +29,6 @@ public class LombokDozerDemoApplication implements CommandLineRunner {
 
         mapper.map(employee, employeeDto);
 
-        System.out.println(employeeDto);
+        log.debug(employeeDto.toString());
     }
 }
